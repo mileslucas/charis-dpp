@@ -565,25 +565,11 @@ endelse
 ;Now, decision tree: set the star's magnitude to be magnitude determined by filter 
 ;H for lowres/broadband and H, J for J, K for K 
  case filtname0 of 
-  'lowres': begin
-   starmagval=hmag
-   end
-
-   'broadband':begin
-    starmagval=hmag
-    end
-   
-   'J':begin
-    starmagval=jmag
-   end
-
-   'H': begin
-    starmagval=hmag
-    end
-   
-   'K': begin
-    starmagval=kmag
-    end 
+  'lowres': starmagval=hmag
+   'Broadband': starmagval=hmag
+   'J': starmagval=jmag
+   'H': starmagval=hmag
+   'K': starmagval=kmag
  endcase
     
 

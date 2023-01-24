@@ -36,31 +36,16 @@ endelse
 if ~keyword_set(wavecalfile) then begin
 
 ;broadband
-if filtname eq 'lowres' then begin
-wavecalfile='lowres_wvlh.txt'
+case filtname of
+    'J': wavecalfile='highres_jwvlh.txt'
+    'H': wavecalfile='highres_hwvlh.txt'
+    'K': wavecalfile='highres_kwvlh.txt'
+    'Broadband': wavecalfile='lowres_wvlh.txt'
+    'lowres': wavecalfile='lowres_wvlh.txt'
+    else: wavecalfile='lowres_wvlh.txt'
+endcase
 
 endif
-
-if filtname eq 'J' then begin
-;jband
-wavecalfile='highres_jwvlh.txt'
-endif
-
-if filtname eq 'H' then begin
-;h band
-wavecalfile='highres_hwvlh.txt'
-endif
-
-if filtname eq 'K' then begin
-;kband
-wavecalfile='highres_kwvlh.txt'
-endif
-
-
-;wavecalfile='polychromekeyR30.fits'
-;you can override the wavecalfile
-endif
-
 ;override
 ;wavelengths=readfits(wavecalpath+wavecalfile,h1)
 readcol,wavecalpath+wavecalfile,wavelengths,/silent

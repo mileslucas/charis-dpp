@@ -10,7 +10,7 @@ function charis_path,pathname=pathname
 ;*****MODIFY THESE****
 
 ;1.
-charispath='~/idl_tools/ADI_dl/charis_dpp_new/'
+charispath='/Users/mileslucas/software/charis-dpp/idl/'
 
 ;these models have are from the online substellar atmosphere model server: 
 ;http://svo2.cab.inta-csic.es/theory/newov2/
@@ -18,7 +18,7 @@ charispath='~/idl_tools/ADI_dl/charis_dpp_new/'
 ;e.g lte020-4.0-0.0.BT-Settl.7.dat.txt  = 2000K, log(g)=4, solar metallicity
 
 ;2.
-btsettldirectory='/Users/thaynecurrie/Research/Planets/DI/ames/btsettl/'
+btsettldirectory='/Volumes/HAL/models/'
 
 
 ;********

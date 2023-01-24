@@ -21,21 +21,11 @@ filtresponsedir=charis_path(pathname='filtresponsedir')
 ;filtresponsedir='~/idl_tools/ADI_dl/charisred/tools/filters/filter_response/'
 
 case filtname of 
-   'J': begin
-    charis_std_filter='Jband'
-    end
-   'H': begin
-     charis_std_filter='Hband'
-    end
-   'K': begin
-     charis_std_filter='Ksband'
-    end
-    'lowres':begin
-     charis_std_filter='Hband'
-     end
-    'broadband':begin
-     charis_std_filter='Hband'
-     end
+  'J': charis_std_filter='Jband'
+  'H': charis_std_filter='Hband'
+  'K': charis_std_filter='Ksband'
+  'lowres': charis_std_filter='Hband'
+  'Broadband': charis_std_filter='Hband'
 endcase
 
 ;charis_std_filter='Hband'
@@ -168,12 +158,15 @@ endif
  filter=sxpar(pri_header,'FILTNAME')
  dloglam=sxpar(pri_header,'DLOGLAM')
  specresolution=1./dloglam
-  ;case filter of 
-  ; 'broadband': specresolution=30.
-  ; 'J': specresolution=100.
-  ; 'H': specresolution=100.
-  ; 'K': specresolution=100.
-  ;endcase
+
+
+; case filter of
+;   'J': specresolution=100
+;   'H': specresolution=100
+;   'K': specresolution=100
+;   'lowres': specresolution=30
+;   'Broadband': specresolution=30
+; endcase
 
   fwhmloc=VALUE_LOCATE(model_wavelengths/1e4,[(lambda[0]),(lambda[0]+dloglam)])
   fwhm=float(fwhmloc[1]-fwhmloc[0])
