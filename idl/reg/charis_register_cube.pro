@@ -725,6 +725,10 @@ pro charis_register_cube, pfname, prefname = prefname, suffname = suffname, $
           sxaddpar, h1, 'PSFC_' + strtrim(ii, 2), $
             string(strtrim(PSFcens[*, ii], 2), format = '(F7.3," ",F7.3)'), $
             'PSF Center of slice ' + strtrim(ii, 2)
+
+          sxaddpar, h1, 'shift_' + strtrim(ii, 2), $
+            string(strtrim([-1 * deltax[ii], -1 * deltay[ii]], 2), format = '(F7.3," ",F7.3)'), $
+            'Image shift for slice ' + strtrim(ii, 2)
         endfor
 
         psfcenx = median(PSFcens[0, *], /even)
