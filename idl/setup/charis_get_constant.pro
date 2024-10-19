@@ -2,18 +2,20 @@ function charis_get_constant, name = name
   compile_opt idl2
 
   ; in case you need to change this ...
-  Dtel = 7.9d0
-  pixscale = 0.0162
-  ; pixscale=0.0164
+  Dtel = 7.92d0
+  pixscale = 0.01615
 
   case name of
     'Dtel': begin
-      value = 7.9d0
+      value = Dtel 
     end
 
     'pixscale': begin
-      value = 0.0162
-      ; value=0.0164
+      value = pixscale 
+    end
+
+    'angoffset': begin
+      value = 2.03
     end
 
     'lowspots_x': begin
@@ -45,9 +47,6 @@ function charis_get_constant, name = name
       ; value=[113.5,141,86.5,59]
     end
 
-    'angoffset': begin
-      value = 2.07
-    end
   endcase
 
   return, value
